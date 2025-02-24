@@ -1,11 +1,11 @@
 <?php
 require_once __DIR__ . '/Config.php';
 
-
 class Database {
+    private static $instance = null;
     private $conn;
 
-    public function __construct() {
+    private function __construct() {
         $host = getenv('DB_HOST');
         $db_name = getenv('DB_NAME');
         $username = getenv('DB_USER');
@@ -19,8 +19,16 @@ class Database {
         }
     }
 
-    public function query($sql) {
-        return $this->conn->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    public static function getInstance() {
+        if (self::$instance === null) {
+            self::$instance = new Database();
+        }
+        return self::$instance;
+    }
+
+    public function getConnection() {
+        return $this->conn;
     }
 }
+
 ?>
