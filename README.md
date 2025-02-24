@@ -35,7 +35,7 @@ Crear una plataforma educativa accesible y efectiva que ayude a los estudiantes 
 1️⃣ **Clonar el repositorio:**  
 ```bash
 git clone https://github.com/KerenBermeo/nurse_case.git
-cd NurseCase
+cd nurse_case
 ```  
 
 2️⃣ **Instalar dependencias (si usas Laravel o CodeIgniter):**  
@@ -70,20 +70,6 @@ php artisan serve
 6️⃣ **Abrir en el navegador:**  
 ```
 http://localhost:8000
-```
-
----
-
-## 📂 **Estructura del Proyecto**  
-```
-/NurseCase
-│── app/              # Lógica del backend
-│── public/           # Archivos públicos (CSS, JS, imágenes)
-│── database/         # Migraciones y seeds
-│── resources/        # Vistas y plantillas
-│── routes/           # Definición de rutas
-│── .env              # Configuración del entorno
-│── README.md         # Documentación del proyecto
 ```
 
 ---
