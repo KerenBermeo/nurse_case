@@ -21,7 +21,7 @@ class BaseRepository {
         return $stmt->fetch() ?: null;
     }
 
-    public function creacte(array $data): bool {
+    public function create(array $data): bool {
         $colums = implode(',', array_keys($data));
         $placeholders = implode(',', array_map(fn($k) => ":$k", array_keys($data)));
         $stmt = $this->db->prepare("INSERT INTO {$this->table} ($colums) VALUES ($placeholders)");
@@ -35,7 +35,7 @@ class BaseRepository {
         return $stmt -> execute($data);
     }
 
-    public function delecte(int $id): bool {
+    public function delete(int $id): bool {
         $stmt = $this->db->prepare("DELETE FROM {$this->table} WHERE id = :id");
         return $stmt->execute(['id' => $id]);
     }
