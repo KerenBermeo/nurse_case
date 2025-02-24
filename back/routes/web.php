@@ -1,17 +1,15 @@
 <?php
-require_once __DIR__ . '/../core/Router.php';
+require_once __DIR__.'/../Controllers/UserController.php';
 
-$router = new Router();
+$userController = new UserController();
 
-// Página de inicio
-$router->get('/', ['HomeController', 'index']);
+// Registro de usuario
+if ($_SERVER['REQUEST_URI'] === '/register' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $userController->register();
+}
 
-// Autenticación
-$router->get('/login', ['AuthController', 'showLoginForm']);
-$router->post('/login', ['AuthController', 'login']);
-$router->get('/register', ['AuthController', 'showRegisterForm']);
-$router->post('/register', ['AuthController', 'register']);
-$router->get('/logout', ['AuthController', 'logout']);
-
-return $router;
+// Login de usuario
+if ($_SERVER['REQUEST_URI'] === '/login' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    $userController->login();
+}
 ?>
