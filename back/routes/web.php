@@ -1,15 +1,24 @@
-<?php
-require_once __DIR__.'/../Controllers/UserController.php';
 
-$userController = new UserController();
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/front/css/styles.css">
+</head>
+<body>
+    <h1>Bienvenido a NurseCase</h1>
+    <p>Gestiona tus casos médicos de manera eficiente.</p>
 
-// Registro de usuario
-if ($_SERVER['REQUEST_URI'] === '/register' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    $userController->register();
-}
-
-// Login de usuario
-if ($_SERVER['REQUEST_URI'] === '/login' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-    $userController->login();
-}
-?>
+    <!-- Botones para redirigir a registro y login -->
+    <div>
+        <a href="/register">
+            <button>Registrarse</button>
+        </a>
+        <a href="/login">
+            <button>Iniciar sesión</button>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-USE nurse_case;
+USE nursecase;
 
 CREATE TABLE IF NOT EXISTS user (
     id INT AUTO_INCREMENT PRIMARY KEY,

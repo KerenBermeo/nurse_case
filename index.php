@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/../back/routes/web.php';
+require_once __DIR__.'/back/routes/web.php';
 
 // Obtener la ruta solicitada
 $requestUri = $_SERVER['REQUEST_URI'];
